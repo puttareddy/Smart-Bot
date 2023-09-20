@@ -1,4 +1,4 @@
-# AI Optima Search in Knowlege base
+# Smart Bot with enhanced/personalized knowlege base
 
 ## Why?
 > what is the business value?
