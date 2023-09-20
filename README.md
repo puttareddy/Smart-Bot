@@ -3,7 +3,7 @@
 ## Why?
 > what is the business value?
 
-AI Optima search in a knowledge base enables efficient retrieval of relevant information, improves search accuracy, enhances data exploration, and aids in personalized recommendations, leading to effective knowledge discovery and improved decision-making.
+AI search in a knowledge base enables efficient retrieval of relevant information, improves search accuracy, enhances data exploration, and aids in personalized recommendations, leading to effective knowledge discovery and improved decision-making.
 
 ## What does this application do?
 This is a Python application that allows you to ask any questions, which uses a LLM to generate a response by finding the intent of the request and search in various sources like existing knowledge base, internet etc., based on the intent and applies RBAC before showing the right response to authorized user.
