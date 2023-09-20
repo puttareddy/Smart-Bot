@@ -1,0 +1,15 @@
+FROM python:3.11.3-slim as base
+
+RUN mkdir /work/
+WORKDIR /work/
+
+COPY ./src/requirements.txt /work/requirements.txt
+# RUN pip3 install --upgrade pip
+RUN pip3 install --no-cache-dir -r requirements.txt
+# RUN pip3 uninstall altair
+# RUN pip3 install openapi==1.1.0
+
+COPY ./src/ /work/
+CMD python3 app.py
+
+

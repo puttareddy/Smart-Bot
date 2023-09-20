@@ -1,0 +1,35 @@
+version: "3.4"
+services:
+  api: #docker run --rm -it -v ${PWD}:/work -w /work -p 5003:5000 aimvector/python:1.0.0 /bin/sh
+    container_name: api
+    image: llm-api:0.0.1
+    build:
+      context: ./SearchEngine
+      # target: debug
+    #working_dir: /work      #comment out for build.target:prod
+    #entrypoint: /bin/sh     #comment out for build.target:prod
+    #stdin_open: true        #comment out for build.target:prod
+    #tty: true               #comment out for build.target:prod
+    volumes:
+    - ./SearchEngine/src/:/work
+    ports:
+      - 5003:5003
+      - 5678:5678
+      - 8501:8501
+  bot: #docker run --rm -it -v ${PWD}:/work -w /work -p 5003:5000 aimvector/python:1.0.0 /bin/sh
+    container_name: bot
+    image: teams-bot:0.0.1
+    build:
+      context: ./TeamsBot
+      # target: debug
+    #working_dir: /work      #comment out for build.target:prod
+    #entrypoint: /bin/sh     #comment out for build.target:prod
+    #stdin_open: true        #comment out for build.target:prod
+    #tty: true               #comment out for build.target:prod
+    volumes:
+    - ./TeamsBot/src/:/work
+    ports:
+      - 3978:3978
+    environment:
+      - APP_ID=my_value
+      - APP_PASSWORD=password
